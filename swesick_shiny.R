@@ -4,7 +4,7 @@ ui <- fluidPage(
   sidebarLayout(
     sidebarPanel("test"),
     mainPanel("TEST",
-
+              tags$head(tags$style("tfoot {display: table-header-group;}")),
               fluidRow(
                 column(12,
                        dataTableOutput("table")))
