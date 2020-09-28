@@ -4,18 +4,21 @@ ui <- fluidPage(
   sidebarLayout(
     sidebarPanel("test"),
     mainPanel("TEST",
+
               fluidRow(
                 column(12,
                        dataTableOutput("table")))
     )
-  ),
-  tags$head(tags$style("tfoot {display: table-header-group;}"))
+  )
 )
 
 server <- function(input, output){
   
+  dataInput <- reactive({
+    swesick()
+    })
   
-  output$table <- renderDataTable(swesick())
+  output$table <- renderDataTable(dataInput())
 }
 
 shinyApp(ui, server)
