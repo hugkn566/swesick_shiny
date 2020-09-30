@@ -41,7 +41,7 @@ ui <- fluidPage(
 server <- function(input, output){
   
   dataInput <- reactive({
-    data <- data
+    data <- Swesick::swesick()
     data <- data[data$ar >= input$range[1] & data$ar <= input$range[2], input$columns]
     })
   
