@@ -29,8 +29,7 @@ ui <- fluidPage(
                                           "antal_kvinnor",
                                           "andel_man")
                              )),
-    mainPanel("TEST",
-              tags$head(tags$style("tfoot {display: table-header-group;}")),
+    mainPanel(tags$head(tags$style("tfoot {display: table-header-group;}")),
               fluidRow(
                 column(12,
                        dataTableOutput("table")))
